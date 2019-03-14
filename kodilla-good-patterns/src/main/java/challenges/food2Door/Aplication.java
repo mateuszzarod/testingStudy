@@ -67,7 +67,6 @@ public class Aplication {
         listOfProducts.add(new Product("Wheat", 5, shop1.getName()));
 
         ShoppingCart shoppingCart = new ShoppingCart(listOfProducts);
-
         OrderDetails orderDetails = new OrderDetails("ExtrafoodShop", listOfProducts);
 
         OrderService orderService = new OrderService(Arrays.asList(shop1, shop2));

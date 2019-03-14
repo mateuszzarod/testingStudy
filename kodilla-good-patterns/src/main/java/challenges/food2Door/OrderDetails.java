@@ -9,7 +9,6 @@ import java.util.Objects;
 // tworzę produkt (dane produktu + Shop z którego pochodzi
 //tworzę obiekt ShoppingCart w którym dodaje te produkty
 
-
 public class OrderDetails {
 
 

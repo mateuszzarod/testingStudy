@@ -2,6 +2,7 @@ package com.kodilla.patterns.builder.pizza;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public final class Pizza {
@@ -34,7 +35,7 @@ public final class Pizza {
         }
     }
 
-    public Pizza(final String bottom, final String sauce, final List<String> ingredients) {
+    private Pizza(final String bottom, final String sauce, final List<String> ingredients) {
         this.bottom = bottom;
         this.sauce = sauce;
         this.ingredients = new ArrayList<>(ingredients);

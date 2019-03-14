@@ -1,7 +1,8 @@
 package challenges.flights;
 
 import java.util.Objects;
-//piszę komentarz, żeby móc wrzucić tę klasę na gita ;)
+
+//make flight class with Enum as argument
 public class Flight {
         private City departureCity;
         private City arrivalCity;

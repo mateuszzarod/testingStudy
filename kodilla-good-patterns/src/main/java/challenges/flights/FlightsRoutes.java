@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FlightsRoutes {
+
     private static Set<Flight> flightSet = new HashSet<>();
 
     public static Set<Flight> getFlightSet() {
@@ -15,7 +16,6 @@ public class FlightsRoutes {
         flightSet.add(new Flight(City.LUBLIN, City.KRAKOW));
         flightSet.add(new Flight(City.POZNAN, City.WARSAW));
         flightSet.add(new Flight(City.WARSAW, City.POZNAN));
-
         return flightSet;
     }
 }
