@@ -1,7 +1,6 @@
 package com.kodilla.patterns.prototype;
 
-
-public final class Task {
+public class Task {
     final String name;
 
     public Task(final String name) {
@@ -14,6 +13,8 @@ public final class Task {
 
     @Override
     public String toString() {
-        return "      Task [" + name + "]";
+        return "Task{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

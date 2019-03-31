@@ -4,6 +4,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import java.util.Set;
 
 public class SettingsFileEngineTestSuite {
     @BeforeClass
@@ -16,6 +17,8 @@ public class SettingsFileEngineTestSuite {
         SettingsFileEngine.getInstance().close();
     }
 
+    //nie tworzymy instancji (bo jest to niemożliwe -> prywatny konstruktor)
+    //korzystamy z metody statycznej klasy SettingFileEngine genInstance w każdym wypadku
     @Test
     public void testGetFileName() {
         //Given
@@ -39,8 +42,9 @@ public class SettingsFileEngineTestSuite {
     public void testSaveSettings() {
         //Given
         //When
-        boolean result = SettingsFileEngine.getInstance().saveSettings();
+        boolean result = SettingsFileEngine.getInstance().loadSettings();
         //Then
         Assert.assertTrue(result);
     }
 }
+
