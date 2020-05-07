@@ -4,7 +4,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import java.util.Set;
 
 public class SettingsFileEngineTestSuite {
     @BeforeClass
@@ -47,4 +46,5 @@ public class SettingsFileEngineTestSuite {
         Assert.assertTrue(result);
     }
 }
+
 

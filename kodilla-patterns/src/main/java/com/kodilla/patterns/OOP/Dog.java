@@ -6,8 +6,17 @@ public class Dog implements Animal {
         return "Dog";
     }
 
-    @Override
     public String voice() {
         return "BARK BARK";
+    }
+
+    @Override
+    public String animalName() {
+        return null;
+    }
+
+    @Override
+    public String animalVoice() {
+        return null;
     }
 }

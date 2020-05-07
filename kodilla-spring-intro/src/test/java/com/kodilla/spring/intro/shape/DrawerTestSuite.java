@@ -3,6 +3,18 @@ package com.kodilla.spring.intro.shape;
 import org.junit.Assert;
 import org.junit.Test;
 public class DrawerTestSuite {
+
+    @Test
+    public void testDrawWithCircle(){
+        //Given
+        Circle cirle = new Circle();
+        //When
+        Drawer drawer = new Drawer(cirle);
+        String res = drawer.doDrawing();
+        //Then
+        Assert.assertEquals("This is a circle", res);
+    }
+
     @Test
     public void testDoDrawingWithCircle() {
         //Given
