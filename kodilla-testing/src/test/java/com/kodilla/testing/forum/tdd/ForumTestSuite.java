@@ -2,7 +2,7 @@ package com.kodilla.testing.forum.tdd;
 
 import com.kodilla.testing.forum.ForumComment;
 import com.kodilla.testing.forum.ForumPost;
-import com.kodilla.testing.forum.ForumUser;
+import com.kodilla.testing.forum.TheForumUser;
 import org.junit.*;
 
 //Test suite for classes of Forum
@@ -27,7 +27,7 @@ public class ForumTestSuite {
     @Test
     public void testAddPost() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
 
         //When
         forumUser.addPost("mrsmith",
@@ -40,7 +40,7 @@ public class ForumTestSuite {
     @Test
     public void testAddComment() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
 
@@ -54,7 +54,7 @@ public class ForumTestSuite {
     @Test
     public void testGetPost() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
@@ -70,7 +70,7 @@ public class ForumTestSuite {
     @Test
     public void testGetComment() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         ForumComment theComment = new ForumComment(thePost, "mrsmith",
@@ -88,7 +88,7 @@ public class ForumTestSuite {
     @Test
     public void testRemovePostNotExisting() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
 
@@ -102,7 +102,7 @@ public class ForumTestSuite {
     @Test
     public void testRemoveCommentNotExisting() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         ForumComment theComment = new ForumComment(thePost, "mrsmith",
@@ -118,7 +118,7 @@ public class ForumTestSuite {
     @Test
     public void testRemovePost() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
@@ -134,7 +134,7 @@ public class ForumTestSuite {
     @Test
     public void testContainsPost(){
         //given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
@@ -147,7 +147,7 @@ public class ForumTestSuite {
     @Test
     public void testRemoveComment() {
         //Given
-        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         ForumComment theComment = new ForumComment(thePost, "mrsmith",

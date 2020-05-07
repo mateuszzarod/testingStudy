@@ -26,7 +26,7 @@ public class CollectionTestSuite {
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         ArrayList<Integer> newList = new ArrayList<>();
         //When
-        ArrayList<Integer> resultList = oddNumbersExterminator.exterminate(newList);
+        ArrayList<Integer> resultList = oddNumbersExterminator.removeExterminate(newList);
         //Then
         Assert.assertEquals(0, resultList.size());
     }
@@ -60,7 +60,7 @@ public class CollectionTestSuite {
         OddNumbersExterminator checkList = new OddNumbersExterminator();
 
         //When
-        ArrayList<Integer> resultListEvenNumbers = checkList.exterminate(evenNumbers);
+        ArrayList<Integer> resultListEvenNumbers = checkList.removeExterminate(evenNumbers);
         int searchForNumber = evenNumbers.get(0);
         boolean result = evenNumbers.contains(searchForNumber);
         //Then
