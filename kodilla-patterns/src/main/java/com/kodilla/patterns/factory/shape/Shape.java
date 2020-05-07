@@ -1,8 +1,8 @@
 package com.kodilla.patterns.factory.shape;
 
 public interface Shape {
-    String getName();
-    double getField();
+    String getTheName();
+    double getTheField();
     double getCircumference();
 }
 

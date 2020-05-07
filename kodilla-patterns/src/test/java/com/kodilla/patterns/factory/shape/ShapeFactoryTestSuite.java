@@ -3,8 +3,6 @@ package com.kodilla.patterns.factory.shape;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class ShapeFactoryTestSuite {
     @Test
     public void testFactoryCircle() {
@@ -13,8 +11,8 @@ public class ShapeFactoryTestSuite {
         //When
         Shape circle = factory.makeShape(ShapeFactory.CIRCLE);
         //Then
-        Assert.assertEquals(Math.PI * Math.pow(4.50, 2.0), circle.getField(), 0);
-        Assert.assertEquals("The rounded circle", circle.getName());
+        Assert.assertEquals(Math.PI * Math.pow(4.50, 2.0), circle.getTheField(), 0);
+        Assert.assertEquals("The rounded circle", circle.getTheName());
     }
 
     @Test
@@ -24,7 +22,7 @@ public class ShapeFactoryTestSuite {
         //When
         Shape square = factory.makeShape(ShapeFactory.SQUARE);
         //Then             Assert.assertEquals(28.0, square.getCircumference(), 0);
-        Assert.assertEquals("The angular square", square.getName());
+        Assert.assertEquals("The angular square", square.getTheName());
     }
 
     @Test
@@ -34,8 +32,8 @@ public class ShapeFactoryTestSuite {
         //When
         Shape rectangle = factory.makeShape(ShapeFactory.RECTANGLE);
         //Then
-        Assert.assertEquals(37.50, rectangle.getField(), 0);
-        Assert.assertEquals("The long rectangle", rectangle.getName());
+        Assert.assertEquals(37.50, rectangle.getTheField(), 0);
+        Assert.assertEquals("The long rectangle", rectangle.getTheName());
     }
 
 }

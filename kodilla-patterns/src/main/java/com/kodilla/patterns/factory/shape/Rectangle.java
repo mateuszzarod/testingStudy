@@ -12,12 +12,12 @@ public class Rectangle implements Shape{
     }
 
     @Override
-    public String getName() {
+    public String getTheName() {
         return name;
     }
 
     @Override
-    public double getField() {
+    public double getTheField() {
         return width * length;
     }
     @Override

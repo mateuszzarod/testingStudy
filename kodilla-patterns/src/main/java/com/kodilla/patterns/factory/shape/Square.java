@@ -10,12 +10,12 @@ public class Square implements Shape {
     }
 
     @Override
-    public String getName() {
+    public String getTheName() {
         return name;
     }
 
     @Override
-    public double getField() {
+    public double getTheField() {
         return Math.pow(width, 2.0);
     }
 

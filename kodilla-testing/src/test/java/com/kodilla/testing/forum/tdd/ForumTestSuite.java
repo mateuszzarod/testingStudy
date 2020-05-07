@@ -132,6 +132,19 @@ public class ForumTestSuite {
     }
 
     @Test
+    public void testContainsPost(){
+        //given
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+        forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
+        //when
+        boolean result = forumUser.containsPost(thePost);
+        //then
+        Assert.assertTrue(result);
+    }
+
+    @Test
     public void testRemoveComment() {
         //Given
         ForumUser forumUser = new ForumUser("mrsmith", "John Smith");

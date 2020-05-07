@@ -7,12 +7,12 @@ import com.kodilla.patterns.OOP.Male;
 
 public class Main {
     public static void main(String[] args) {
-        int i = 10;
-        int b = 3;
+        int i = 20;
+        int b = 30;
         System.out.println(i&b);
 
-        AnimalRecognizer animalRecognizer = new AnimalRecognizer();
-        String recognized = animalRecognizer.recognize(new Dog());
+        AnimalRecognizer recognizer = new AnimalRecognizer();
+        String recognized = recognizer.recognize(new Dog());
         System.out.println(recognized);
         Male male = new Male("mat");
     }

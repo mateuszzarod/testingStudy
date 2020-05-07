@@ -59,6 +59,15 @@ public class ForumUser {
         return result;
     }
 
+    public boolean containsPost(ForumPost thePost){
+        boolean result = false;
+        if (posts.contains(thePost)){
+            System.out.println("YES");
+            result = true;
+        }
+        return result;
+    }
+
     public boolean removeComment(ForumComment theComment){
         boolean result = false;
         if (comments.contains(theComment)){
