@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum.tdd;
+package com.kodilla.testing.forum.statistics;
 
 import com.kodilla.testing.forum.ForumComment;
 import com.kodilla.testing.forum.ForumPost;
@@ -24,6 +24,8 @@ public class ForumTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
+
+    //Test 1: sprawdzający czy po dodaniu nowego postu liczba postów wynosi 1.
     @Test
     public void testAddPost() {
         //Given
@@ -35,8 +37,8 @@ public class ForumTestSuite {
 
         //Then
         Assert.assertEquals(1, forumUser.getPostsQuantity());
-
     }
+
     @Test
     public void testAddComment() {
         //Given
@@ -45,7 +47,7 @@ public class ForumTestSuite {
                 "this is my first contribution here!", "mrsmith");
 
         //When
-        forumUser.addComment(thePost, "mrsmith", "Thank you for all good words!");
+        forumUser.addComment(thePost, "mrsmith", "thankyou!");
 
         //Then
         Assert.assertEquals(1, forumUser.getCommentsQuantity());
@@ -58,11 +60,8 @@ public class ForumTestSuite {
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
-
         //When
-        ForumPost retrievedPost;
-        retrievedPost = forumUser.getPost(0);
-
+        ForumPost retrievedPost = forumUser.getPost(0);
         //Then
         Assert.assertEquals(thePost, retrievedPost);
     }
@@ -70,7 +69,7 @@ public class ForumTestSuite {
     @Test
     public void testGetComment() {
         //Given
-        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrsmith1", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         ForumComment theComment = new ForumComment(thePost, "mrsmith",
@@ -91,10 +90,8 @@ public class ForumTestSuite {
         TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
-
         //When
         boolean result = forumUser.removePost(thePost);
-
         //Then
         Assert.assertFalse(result);
     }
@@ -102,41 +99,42 @@ public class ForumTestSuite {
     @Test
     public void testRemoveCommentNotExisting() {
         //Given
-
-        TheForumUser forumUser1 = new TheForumUser("mrs", "John Smith");
-        ForumPost thePost1 = new ForumPost("Hello everyone, " +
-                "this is my first contribution here!", "mrs");
-        ForumComment theComment1 = new ForumComment(thePost1, "mrs",
+        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+        ForumComment theComment = new ForumComment(thePost, "mrsmith",
                 "Thank you for all good words!");
 
         //When
-        boolean result = forumUser1.removeComment(theComment1);
+        boolean result = forumUser.removeComment(theComment);
 
         //Then
         Assert.assertFalse(result);
     }
 
-
     @Test
-    public void testContainsPost(){
-        //given
+    public void testRemovePost() {
+        //Given
         TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
         forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
-        //when
-        boolean result = forumUser.containsPost(thePost);
-        //then
+
+        //When
+        boolean result = forumUser.removePost(thePost);
+
+        //Then
         Assert.assertTrue(result);
+        Assert.assertEquals(0, forumUser.getPostsQuantity());
     }
 
     @Test
     public void testRemoveComment() {
         //Given
-        TheForumUser forumUser = new TheForumUser("mrsmith", "John Smith");
+        TheForumUser forumUser = new TheForumUser("mrszarod", "John Smith");
         ForumPost thePost = new ForumPost("Hello everyone, " +
                 "this is my first contribution here!", "mrsmith");
-        ForumComment theComment = new ForumComment(thePost, "mrsmith",
+        ForumComment theComment = new ForumComment(thePost, "mrszarod",
                 "Thank you for all good words!");
         forumUser.addComment(thePost, theComment.getAuthor(),
                 theComment.getCommentBody());
@@ -149,4 +147,3 @@ public class ForumTestSuite {
         Assert.assertEquals(0, forumUser.getCommentsQuantity());
     }
 }
-

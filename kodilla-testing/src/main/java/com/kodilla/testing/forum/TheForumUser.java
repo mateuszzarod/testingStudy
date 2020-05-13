@@ -84,4 +84,7 @@ public class TheForumUser {
     public String getRealName() {
         return realName;
     }
+
+    public void addComment(String mrsmith, String s) {
+    }
 }
